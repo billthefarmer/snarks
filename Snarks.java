@@ -37,8 +37,7 @@ public class Snarks
 	device.setFullScreenWindow(frame);
 	if (device.isDisplayChangeSupported())
         {
-            DisplayMode modes[] = device.getDisplayModes();
-            for (DisplayMode mode: modes)
+            for (DisplayMode mode: device.getDisplayModes())
                 if (mode.getWidth() == 720 &&
                     mode.getHeight() == 480 &&
                     mode.getRefreshRate() == 60)
@@ -212,16 +211,10 @@ public class Snarks
 	{
 	    width = getWidth();
 	    height = getHeight();
-
-	    Graphics g = bufferStrategy.getDrawGraphics();
-	    FontMetrics fm = g.getFontMetrics();
-
 	    tileSize = 16;
 
-	    columns = ((width * 5) / 8) / tileSize;
-	    rows = ((height * 5) / 8) / tileSize;
-
-	    g.dispose();
+	    columns = ((width * 6) / 8) / tileSize;
+	    rows = ((height * 6) / 8) / tileSize;
 	}
 
 	public void setLayers()

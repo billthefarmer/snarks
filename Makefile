@@ -23,4 +23,4 @@ SnarkApplet.zip:	SnarkApplet.jar SnarkApplet.html
 	javac $<
 
 %.mf:		%.class
-	echo Main-Class: $*>$@
+	echo Main-Class: $* > $@
